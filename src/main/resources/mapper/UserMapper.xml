@@ -5,24 +5,38 @@
     id, username
    </sql>
 
-        <select id="findAllUser"  resultType="com.example.springbootdemo.dto.User" >
+    <select id="findAllUser" resultType="com.example.springbootdemo.dto.User">
             select  *  from user
         </select>
 
-        <insert id="createUser" parameterType="com.example.springbootdemo.dto.User">
+    <insert id="createUser" parameterType="com.example.springbootdemo.dto.User">
         insert into
             user(id,username)
         values
             (#{id},#{username})
     </insert>
 
-
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+      delete from user
+    where id = #{id,jdbcType=BIGINT}
+   </delete>
 
     <select id="findUserById" parameterType="java.lang.Long"
             resultType="com.example.springbootdemo.dto.User">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from user
         WHERE id = #{id, jdbcType=BIGINT}
     </select>
+
+    <update id="updateByPrimaryKey" parameterType="com.example.springbootdemo.dto.User" >
+        update user
+        <set >
+            <if test="username != null" >
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
 </mapper>

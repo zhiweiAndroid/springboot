@@ -1,4 +1,4 @@
-package com.example.springbootdemo.dto;
+package com.example.springbootdemo.dto.req;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -10,11 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User  {
-
+public class Id {
     @ApiModelProperty("用户id")
-    private String id;
-    @ApiModelProperty("用户名字")
-    private String username;
+    private Long id;
 
 }

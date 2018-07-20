@@ -14,8 +14,8 @@ public class IUserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     @Override
-    public void createUser(User user) {
-        userMapper.createUser(user);
+    public int createUser(User user) {
+       return userMapper.createUser(user);
     }
 
     @Override
@@ -26,5 +26,15 @@ public class IUserServiceImpl implements IUserService {
     @Override
     public List<User> findAllUser() {
         return userMapper.findAllUser();
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return userMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateUserInfo(User user) {
+        return userMapper.updateByPrimaryKey(user);
     }
 }

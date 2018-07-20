@@ -10,7 +10,7 @@ public interface IUserService {
      * 新增用户
      * @param user
      */
-    void createUser(User user);
+    int createUser(User user);
     /**
      * 查询用户列表
      * @return
@@ -22,4 +22,17 @@ public interface IUserService {
      */
     List<User>findAllUser();
 
+    /**
+     * 通过id删除用户
+     * @param id
+     * @return
+     */
+    int deleteByPrimaryKey(Long id);
+
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    int updateUserInfo(User user);
 }

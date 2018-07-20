@@ -21,15 +21,15 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.snfq.mall"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.springbootdemo"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mall service Restful API文档")
-                .description("mall service Restful API文档")
+                .title("Springbootdemo service Restful API文档")
+                .description("Springbootdemo service Restful API文档")
                 .termsOfServiceUrl("http://blog.didispace.com/")
                 .version("1.0")
                 .build();

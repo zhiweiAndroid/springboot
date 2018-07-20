@@ -12,7 +12,7 @@ public interface UserMapper {
      * 新增用户
      * @param user
      */
-    void createUser(User user);
+    int createUser(User user);
     /**
      * 查询用户列表
      * @return
@@ -25,4 +25,20 @@ public interface UserMapper {
      * @return
      */
     List<User> findAllUser();
+
+    /**
+     * 通过id删除用户
+     * @param id
+     * @return
+     */
+    int deleteByPrimaryKey(@Param("id") Long id);
+
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    int updateByPrimaryKey(User user);
+
+
 }
