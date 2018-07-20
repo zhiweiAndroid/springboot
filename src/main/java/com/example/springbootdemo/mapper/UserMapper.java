@@ -1,6 +1,7 @@
 package com.example.springbootdemo.mapper;
 
 import com.example.springbootdemo.dto.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,5 +18,11 @@ public interface UserMapper {
      * @return
      */
 //    @Select("select * from user")
+    User findUserById(@Param("id") Long id);
+
+    /**
+     * 查询用户列表
+     * @return
+     */
     List<User> findAllUser();
 }

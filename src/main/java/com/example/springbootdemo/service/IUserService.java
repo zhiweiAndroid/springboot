@@ -4,7 +4,7 @@ import com.example.springbootdemo.dto.User;
 
 import java.util.List;
 
-public interface IRegService {
+public interface IUserService {
 
     /**
      * 新增用户
@@ -15,6 +15,11 @@ public interface IRegService {
      * 查询用户列表
      * @return
      */
-    List<User> findAllUser();
+    User findUserById(Long id);
+    /**
+     * 查询用户列表
+     * @return
+     */
+    List<User>findAllUser();
 
 }
