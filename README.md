@@ -1,2 +1,2 @@
 # springboot
-idea + Spring boot + Mybatis
+Idea + Spring boot + Mybatis +Swagger2 构建微服务
